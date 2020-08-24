@@ -35,7 +35,7 @@ LIBS_COMPILE := $(foreach LIB, $(LIBS), -l$(LIB))
 
 TARGET_LIB = libquery_opencl_info.so 
 
-INC_DIRS := . ../common_harp/inc
+INC_DIRS := . ./inc
 INC_COMPILE := $(foreach DIR, $(INC_DIRS), -I$(DIR))
 ifeq ($(FPGA),1)
 	AOCL_COMPILE_CONFIG=$(shell aocl compile-config)

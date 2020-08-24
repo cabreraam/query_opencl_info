@@ -1,0 +1,8 @@
+# stuff to ignore 
+
+lib/libquery_opencl_info.so
+
+obj/query_opencl_info.o
+
+testapp/query.out
+

@@ -228,9 +228,9 @@ void all_device_info(cl_device_id device)
 		&info_uint, NULL);
 	fprintf(stderr, "\t%-32s= %u Bytes\n", "CL_DEVICE_MIN_DATA_TYPE_ALIGN_SIZE", info_uint);
 
-	clGetDeviceInfo(device, CL_DEVICE_NAME, STRING_BUFFER_LEN, &info_string,
+	/*clGetDeviceInfo(device, CL_DEVICE_NAME, STRING_BUFFER_LEN, &info_string,
 		NULL);
-	fprintf(stderr, "\t%-32s= %s\n", "CL_DEVICE_NAME", info_string);
+	fprintf(stderr, "\t%-32s= %s\n", "CL_DEVICE_NAME", info_string);*/
 
 	/*clGetDeviceInfo(device, CL_DEVICE_PLATFORM, sizeof(cl_platform_id),
 		&info_plat, NULL);
@@ -284,9 +284,9 @@ void all_device_info(cl_device_id device)
 		&info_uint, NULL);
 	fprintf(stderr, "\t%-32s= %u\n", "CL_DEVICE_VENDOR_ID", info_uint);
 
-	clGetDeviceInfo(device, CL_DEVICE_VERSION, STRING_BUFFER_LEN, &info_string,
+	/*clGetDeviceInfo(device, CL_DEVICE_VERSION, STRING_BUFFER_LEN, &info_string,
 		NULL);
-	fprintf(stderr, "\t%-32s= %s\n", "CL_DEVICE_VERSION", info_string);
+	fprintf(stderr, "\t%-32s= %s\n", "CL_DEVICE_VERSION", info_string);*/
 
 	clGetDeviceInfo(device, CL_DRIVER_VERSION, STRING_BUFFER_LEN, &info_string,
 		NULL);

@@ -1,5 +1,6 @@
 #include "query_opencl_info.h"
 #include <stdio.h>
+#include <iostream>
 
 int main(int argc, char* argv[])
 {
@@ -13,7 +14,9 @@ int main(int argc, char* argv[])
 	// GOAL: To get device ID
 	// need platform(s)
 	// query for num_platforms to figure out how much space to alloc 
+	std::cout << "what's with this bottom statement?" << std::endl;
 	status = clGetPlatformIDs(0, NULL, &num_platforms);
+	std::cout << "fin" << std::endl;
 	if (status != CL_SUCCESS)
 	{
 		dump_error("Failed to get number of platforms (clGetPlatformIDs)", status);
@@ -47,7 +50,7 @@ int main(int argc, char* argv[])
 	//for each platform, grab the device IDs
 	for (int i = 0; i < num_platforms; ++i)
 	{
-		clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, 0, NULL,
+		clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ACCELERATOR, 0, NULL,
 			&num_devices_array[i]); 	
 		if (status != CL_SUCCESS) 
 		{
